@@ -30,7 +30,9 @@ function getUrl() {
 
 function updateLink() {
   var link = document.getElementById("link");
-  link.href = getUrl();
+  var linkA = "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
+  var linkB = "vikamobiilibeta://finding/588848"; 
+  link.href = linkA;
 }
 
 </script>
