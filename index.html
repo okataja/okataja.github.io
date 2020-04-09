@@ -1,1 +1,24 @@
-<html><body><p>hello world</p></body></html>
+<!doctype HTML>
+<html>
+<head>
+</head>
+<body>
+<form id="vika-form">
+  <label for="findingId">Finding ID:</label>
+  <input type="text" name="findingId" id="findingId" />
+  <input type="submit"></input>
+</form>
+<script type="text/javascript">
+function goToVikamobiili(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var findingId = document.getElementById("findingId").value;
+  console.log("Go to vikamobiili with " + findingId);
+  window.location = "vikamobiilibeta:/findings/" + findingId;
+}
+
+document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
+</script>
+
+</body>
+</html>
