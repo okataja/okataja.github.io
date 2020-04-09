@@ -3,10 +3,10 @@
 <head>
 </head>
 <body>
-<h1>versio 1</h1>
+<h1>versio 1.1</h1>
 <form id="vika-form">
   <label for="findingId">Finding ID:</label>
-  <input type="text" name="findingId" id="findingId" />
+  <input type="text" name="findingId" id="findingId" onchange="updateLink()"/>
   <input type="submit"></input>
   <a href=“vikamobiilibeta://finding/588848”>test</a>
 </form>
@@ -22,15 +22,21 @@ function goToVikamobiili(e) {
   window.location = "vikamobiilibeta://finding/" + findingId;
 }
 
+document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
+
 function getUrl() {
 	return "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
 }
 
-document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
+function updateLink() {
+  var link = document.getElementById("link");
+  link.href = getUrl();
+}
+
 </script>
 
-<a href="javascript:getUrl()">Ilmoitukseen</a>
-<a href="vikamobiilibeta://finding/123">Staattinen ilmoitukseen</a>
+<a id="link" href="">Ilmoitukseen</a>
+<!--<a href="vikamobiilibeta://finding/123">Staattinen ilmoitukseen</a>-->
 
 </body>
 </html>
