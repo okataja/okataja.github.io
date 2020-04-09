@@ -14,7 +14,7 @@ function goToVikamobiili(e) {
   e.stopPropagation();
   var findingId = document.getElementById("findingId").value;
   console.log("Go to vikamobiili with " + findingId);
-  window.location = "vikamobiilibeta:/findings/" + findingId;
+  window.location = "vikamobiilibeta://finding/" + findingId;
 }
 
 document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
