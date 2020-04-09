@@ -22,8 +22,14 @@ function goToVikamobiili(e) {
   window.location = "vikamobiilibeta://finding/" + findingId;
 }
 
+function getUrl() {
+	return "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
+}
+
 document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
 </script>
+
+<a href="javascript:getUrl()">Ilmoitukseen</a>
 
 </body>
 </html>
