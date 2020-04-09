@@ -3,42 +3,24 @@
 <head>
 </head>
 <body>
-<h1>versio 1.1</h1>
+<h1>Vikamobiili BETA Launcher 1.0</h1>
 <form id="vika-form">
-  <label for="findingId">Finding ID:</label>
-  <input type="text" name="findingId" id="findingId" onchange="updateLink()"/>
-  <input type="submit"></input>
-  <a href=“vikamobiilibeta://finding/588848”>test</a>
+  <label for="findingId">Vika ID:</label>
+  <input type="text" name="findingId" id="findingId" onchange="updateLink()" onkeydown="updateLink()" onpaste="updateLink()" oninput="updateLink()"/>
 </form>
-<p>Muutosloki:<br/>
-	- lisätty testi linkki
-</p>	
 <script type="text/javascript">
-function goToVikamobiili(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var findingId = document.getElementById("findingId").value;
-  console.log("Go to vikamobiili with " + findingId);
-  window.location = "vikamobiilibeta://finding/" + findingId;
-}
-
-document.getElementById("vika-form").addEventListener("submit",goToVikamobiili);
-
 function getUrl() {
 	return "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
 }
 
 function updateLink() {
-  var link = document.getElementById("link");
   var linkA = "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
-  var linkB = "vikamobiilibeta://finding/588848"; 
   link.href = linkA;
 }
 
 </script>
 
 <a id="link" href="">Ilmoitukseen</a>
-<!--<a href="vikamobiilibeta://finding/123">Staattinen ilmoitukseen</a>-->
 
 </body>
 </html>
