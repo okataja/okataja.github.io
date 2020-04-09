@@ -18,9 +18,6 @@ input {
   <input type="text" name="findingId" id="findingId" onchange="updateLink()" onkeydown="updateLink()" onpaste="updateLink()" oninput="updateLink()"/>
 </form>
 <script type="text/javascript">
-function getUrl() {
-	return "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
-}
 
 function updateLink() {
   var linkA = "vikamobiilibeta://finding/" + document.getElementById("findingId").value;
